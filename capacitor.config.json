@@ -1,0 +1,6 @@
+{
+  "appId": "pk.offer.zennurikabe",
+  "appName": "ZenNurikabe",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
