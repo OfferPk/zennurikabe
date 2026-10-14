@@ -1,0 +1,18 @@
+{
+  "name": "ZenNurikabe: Island Logic Puzzle",
+  "short_name": "ZenNurikabe",
+  "description": "Calm, meditative Japanese Nurikabe grid logic puzzle with soothing procedural water acoustics.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#06151c",
+  "theme_color": "#06151c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
