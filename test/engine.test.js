@@ -156,4 +156,26 @@ describe('ZenNurikabe Engine Tests', () => {
 
     assert.equal(engine.isLevelCompleted(), true);
   });
+
+  it('should load all 50 generated levels and verify their solutions', () => {
+    const { LEVELS } = require('../src/levels.js');
+    assert.equal(LEVELS.length, 50);
+
+    for (const lvl of LEVELS) {
+      assert.ok(lvl.size >= 5 && lvl.size <= 9);
+      assert.ok(lvl.clues && lvl.clues.length === lvl.size);
+      assert.ok(lvl.solution && lvl.solution.length === lvl.size);
+
+      const engine = new NurikabeEngine(lvl);
+      // Apply solution
+      for (let r = 0; r < lvl.size; r++) {
+        for (let c = 0; c < lvl.size; c++) {
+          if (!engine.isClueCell(r, c)) {
+            engine.setCell(r, c, lvl.solution[r][c]);
+          }
+        }
+      }
+      assert.equal(engine.isLevelCompleted(), true, `Level ${lvl.id} solution should be valid`);
+    }
+  });
 });
